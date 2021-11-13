@@ -1,0 +1,14 @@
+{% extends "task/layout.html" %}
+{% load static %}
+{% block title %}To Do List{% endblock title %}
+{% block body %}
+<h2>My To Do List</h2>
+<ul>
+{% for task in tasks %}
+    <li>{{ task }}</li>
+    {% empty %}
+    <li>No tasks</li>
+{% endfor %}
+</ul>
+<a href="{% url 'task:add' %}" class="button">Add</a>
+{% endblock %}
